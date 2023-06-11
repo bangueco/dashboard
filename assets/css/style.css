@@ -10,10 +10,15 @@ html, body {
   height: 100%;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
 header {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 120px 100px;
   padding: 1rem 1rem 1rem 3rem;
 }
 
@@ -44,19 +49,23 @@ header > .profile-container > .profile {
 }
 
 header > .welcome-container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 header > .welcome-container > .welcome-profile {
   height: 65px;
   border-radius: 100%;
-  grid-row: 1 / -3;
 }
 
-header > .welcome-container > p:nth-of-type(2) {
-  grid-column: 2;
+header > .welcome-container > .greetings > p:nth-of-type(1) {
+  font-size: 1rem;
+}
+
+header > .welcome-container > .greetings > p:nth-of-type(2) {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 header > .buttons-container {
@@ -68,7 +77,38 @@ header > .buttons-container {
 
 header > .buttons-container > button {
   height: 40px;
-  width: 80px;
-  border-radius: 100px;
+  width: 110px;
+  border-radius: 20px;
   border: none;
+  font-size: 1rem;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 1.2rem 2rem 1.2rem 1.2rem;
+  width: 400px;
+}
+
+.sidebar > .sidebar-site-navigation > ul, .sidebar > .sidebar-site-settings > ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar > .sidebar-site-navigation > ul > li, .sidebar > .sidebar-site-settings > ul > li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+
+.sidebar > .sidebar-site-navigation > ul > li > i, .sidebar > .sidebar-site-settings > ul > li > i {
+  font-size: 1.3rem;
+  width: 20px;
+  align-self: center;
+}
+
+.sidebar > .sidebar-site-navigation > ul > li > a, .sidebar > .sidebar-site-settings > ul > li > a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.3rem;
 }
